@@ -1,0 +1,80 @@
+:root {
+    --display: flex;
+    --desxtop-pad: 250px;
+    --mobile-pad: 20px;
+    --align-center: center;
+    --color: #3577f0;
+    --radius: 10px
+}
+
+.checkout {
+    display: flex;
+    gap: 25px;
+    padding: 40px var(--desxtop-pad);
+    flex-wrap: wrap;
+}
+
+.billing {
+    padding: 25px;
+    flex: 1;
+    border-radius: var(--radius);
+    background-color: rgb(237, 237, 237);
+    flex-basis: 400px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    padding: 7px 0px;
+    font-size: 18px;
+    border: none;
+}
+
+fieldset {
+    border-radius: 6px;
+    flex: 1;
+}
+
+.namegroup {
+    display: var(--display);
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.yourorder {
+    padding: 25px;
+    flex: 1;
+    border-radius: var(--radius);
+    background-color: var(--color);
+    flex-basis: 400px;
+    height: fit-content;
+}
+
+.yourorderin {
+    margin-top: 20px;
+    padding: 25px 15px;
+    background-color: white;
+    height: fit-content;
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+.yourorderin div {
+    display: var(--display);
+    justify-content: space-between;
+    padding: var(--mobile-pad) 0px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+@media (max-width: 992px) {
+    .checkout {
+        padding: var(--mobile-pad);
+    }
+}

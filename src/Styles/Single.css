@@ -1,0 +1,42 @@
+:root {
+    --display: flex;
+    --color: #3577f0;
+    --align-items: center;
+    --desktop-sec-pad: 250px;
+    --mobile-sec-pad: 20px;
+    --flexwrap: wrap
+}
+
+.single {
+    display: var(--display);
+    gap: 30px;
+    padding: 50px var(--desktop-sec-pad); 
+}
+
+.singleimage {
+    width: 200px;
+    flex: 1;
+    background-color: #ededed;
+    border-radius: 10px;
+
+}
+
+.singleimage img{
+    width: 100%
+
+}
+
+.singleinfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.addtocart{
+    padding: 20px;
+    border: none;
+    background-color: #3577f0;
+    font-size: 20px;
+    color: white;
+   border-radius: 10px;
+}
