@@ -38,7 +38,7 @@ function Home() {
         <>
             <div className="homehero">
                 <div className="catlist">
-                    <CategoryNav text="Beauty" icon={<BiUser />} link="beauty"/>
+                    <CategoryNav text="Beauty" icon={<BiUser />} link="beauty" />
                     <hr />
                     <CategoryNav text="Electronics" icon={<BiUser />} link="electronics" />
                     <hr />
@@ -63,14 +63,6 @@ function Home() {
                 </div>
             </div>
 
-            <div className="homeimagebox">
-                <ImageBox text="Fast & Secure Delivery" image={service1} />   <ImageBox text="100% Guarantee On Product" image={service2} />
-                <ImageBox text="24 Hour Return Policy" image={service3} />
-                <ImageBox text="24 Hour Return Policy" image={service4} />
-                <ImageBox text="Next Level Pro Quality" image={service5} />
-            </div>
-
-
             <SubHeading icon={<BiBasket />} text="This week" heading="Top Rated" />
             <div className="toprated">
                 {topRated.slice(0, 5).map((item) => (
@@ -90,6 +82,13 @@ function Home() {
                 {product.slice(10, 20).map((item) => (
                     <ProductTwo detail={`/${item.id}`} image={item.thumbnail} price={item.price} name={item.title} sale={item.discountPercentage} />
                 ))}
+            </div>
+
+            <div className="homeimagebox">
+                <ImageBox text="Fast & Secure Delivery" image={service1} />
+                <ImageBox text="100% Guarantee On Product" image={service2} />
+                <ImageBox text="24 Hour Return Policy" image={service3} />
+                <ImageBox text="Next Level Pro Quality" image={service5} />
             </div>
 
             <SubHeading icon={<BiBasket />} text="This week" heading="New Arrivals" />

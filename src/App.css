@@ -29,17 +29,20 @@ img {
     object-fit: cover;
 }
 
-/*header*/
-.topheader {
-    display: var(--display);
-    justify-content: space-between;
-    align-items: var(--align-center);
-    padding: 30px var(--desxtop-pad);
-    gap: 40px;
+header {
     position: sticky;
     top: 0px;
     background-color: #fff;
     z-index: 1000;
+}
+
+/*header*/
+.topheader {
+    display: var(--display);
+    align-items: var(--align-center);
+    padding: 30px var(--desxtop-pad);
+    gap: 40px;
+
 }
 
 .topheader input {
@@ -352,7 +355,7 @@ footer h1 {
 
 @media (max-width: 992px) {
     .topheader {
-        padding: 30px var(--mobile-pad);
+        padding: 20px var(--mobile-pad);
         gap: 20px;
     }
 
@@ -379,7 +382,7 @@ footer h1 {
     }
 
     .imagebox {
-        flex-basis: 200px;
+        flex-basis: 150px;
         padding: 20px;
     }
 
@@ -403,7 +406,11 @@ footer h1 {
     }
 
     .productone {
-        flex-basis: 200px;
+        flex-basis: 150px;
+    }
+
+    .productimg {
+        padding: 15px;
     }
 
     .productimg div {
