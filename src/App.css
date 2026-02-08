@@ -409,12 +409,24 @@ footer h1 {
         flex-basis: 150px;
     }
 
-    .productimg {
-        padding: 15px;
+    .productimg,
+    .producttwoimg {
+        padding: 10px;
+        height: 200px;
+        background-size: contain;
     }
 
     .productimg div {
         transform: translateY(0%);
+    }
+
+    .productimg div button {
+        background: var(--color);
+        border: none;
+        color: white;
+        padding: 5px;
+        font-size: 14px;
+        border-radius: 3px;
     }
 
     .pagebanners {
