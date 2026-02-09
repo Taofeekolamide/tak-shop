@@ -36,13 +36,17 @@ header {
     z-index: 1000;
 }
 
+main {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
 /*header*/
 .topheader {
     display: var(--display);
     align-items: var(--align-center);
     padding: 30px var(--desxtop-pad);
     gap: 40px;
-
 }
 
 .topheader input {
@@ -103,6 +107,7 @@ header {
 
 .relevantgroup {
     display: var(--display);
+    align-items: var(--align-center);
     gap: 10px;
 }
 
@@ -113,6 +118,17 @@ header {
 
 .relevanticons:hover {
     color: var(--color);
+}
+
+.cart-badge {
+    position: relative;
+    top: -15px;
+    right: 10px;
+    background: var(--color);
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
 }
 
 .menu {
@@ -190,7 +206,8 @@ header {
     gap: 10px;
 }
 
-.productimg div button {
+.productimg div button,
+.clear {
     background: var(--color);
     border: none;
     color: white;
@@ -247,9 +264,9 @@ header {
 /*branding*/
 .brand {
     background-color: #ececec;
-    padding: 25px;
+    padding: 15px 30px;
     margin-bottom: 10px;
-    width: 300px;
+    min-width: fit-content;
     text-align: center;
     border-radius: 7px;
 }
@@ -406,7 +423,7 @@ footer h1 {
     }
 
     .productone {
-        flex-basis: 150px;
+        flex-basis: 120px;
     }
 
     .productimg,

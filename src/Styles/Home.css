@@ -29,16 +29,22 @@
 }
 
 .categorylist {
+    display: none;
     position: absolute;
     top: 250;
     left: 520px;
     padding: 30px;
-    width: fit-content;
     background-color: #f5f5f5;
+    gap: 25px;
+}
+
+.categorylist a {
+    color: #000;
 }
 
 /* home view products*/
-.toprated, .viewproducts {
+.toprated,
+.viewproducts {
     display: var(--display);
     flex-wrap: var(--flexwrap);
     gap: 15px;
@@ -98,7 +104,8 @@
         padding: 60px var(--mobile-sec-pad);
     }
 
-    .toprated, .viewproducts {
+    .toprated,
+    .viewproducts {
         padding: 0px var(--mobile-sec-pad) 50px var(--mobile-sec-pad);
     }
 

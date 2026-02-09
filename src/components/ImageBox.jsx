@@ -1,4 +1,4 @@
-function ImageBox({image, text}) {
+function ImageBox({ image, text }) {
     return (
         <>
             <div className="imagebox">

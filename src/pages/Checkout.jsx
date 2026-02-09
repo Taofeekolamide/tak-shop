@@ -36,7 +36,7 @@ function Checkout() {
                             <legend>Town / City</legend>
                             <input type="text" />
                         </fieldset>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
                         <fieldset>
                             <legend>Phone</legend>
                             <input type="tel" />

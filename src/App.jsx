@@ -4,7 +4,7 @@ import '../src/Styles/Shop.css'
 import '../src/Styles/Single.css'
 import '../src/Styles/Cart.css'
 import '../src/Styles/Checkout.css'
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -22,6 +22,8 @@ import LoggedIn from './Context/LoggedIn'
 import { useState } from 'react'
 import NavToggle from './Context/NavToggle'
 import MobileNav from './components/MobileNav'
+import ShopCategory from './pages/ShopCategory'
+import Brand from './components/Brands'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -31,27 +33,33 @@ function App() {
     <>
       <NavToggle.Provider value={{ toggleNav, setToggleNav }}>
         <LoggedIn.Provider value={{ isLoggedIn, setIsLoggedIn }} >
-          <Header />
-          <MobileNav />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/product/:id" element={<ProdunctDetails />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/wishlist" element={<Wishlist />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/my-account" element={<MyAccount />} >
-              <Route path="dashboard" element={<Home />} />
-              <Route path="orders" element={<Home />} />
-            </Route>
-          </Routes>
 
-          <Footer />
+          <main>
+            <Header />
+            <MobileNav />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/product/:id" element={<ProdunctDetails />} />
+              <Route path="/category/:id" element={<ShopCategory />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/my-account" element={<MyAccount />} >
+                <Route path="dashboard" element={<Home />} />
+                <Route path="orders" element={<Home />} />
+              </Route>
+            </Routes>
+            <Footer />
+          </main>
+
+          <Outlet />
+
 
         </LoggedIn.Provider>
       </NavToggle.Provider>
