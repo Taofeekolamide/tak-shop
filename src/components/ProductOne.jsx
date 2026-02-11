@@ -2,6 +2,8 @@ import { useContext } from "react"
 import { BiHeart } from "react-icons/bi"
 import { Link } from "react-router-dom"
 import LoggedIn from "../Context/LoggedIn"
+import { toast } from "react-toastify"
+
 
 function ProductOne({ image, name, sale, price, detail }) {
     const { isLoggedIn, setIsLoggedIn } = useContext(LoggedIn)
@@ -11,13 +13,13 @@ function ProductOne({ image, name, sale, price, detail }) {
             image: image,
             title: name,
             price: sale,
-            quantity: 1
+            quantity: 1,
         }
         const cartitems = JSON.parse(localStorage.getItem("cartitems")) || []
         const exist = cartitems.find(e => e.title === name)
         exist ? exist.quantity += 1 : cartitems.push(newItem)
         localStorage.setItem("cartitems", JSON.stringify(cartitems))
-        alert(`${name} has been added to cart successfully`)
+        toast.success(`${name} has been added to cart successfully`)
     }
 
     const addToCart = () => {
@@ -42,11 +44,11 @@ function ProductOne({ image, name, sale, price, detail }) {
         const wishitems = JSON.parse(localStorage.getItem("wishitems")) || []
         const exist = wishitems.find(e => e.title === name)
         if (exist) {
-            alert(`${name} already on the wishlist`)
+            toast.info(`${name} already on the wishlist`)
         } else {
             wishitems.push(newItem)
             localStorage.setItem("wishitems", JSON.stringify(wishitems))
-            alert(`${name} has been added to wishlist successfully`)
+            toast.success(`${name} has been added to wishlist successfully`)
         }
     }
 

@@ -23,7 +23,8 @@ import { useState } from 'react'
 import NavToggle from './Context/NavToggle'
 import MobileNav from './components/MobileNav'
 import ShopCategory from './pages/ShopCategory'
-import Brand from './components/Brands'
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover />
       <NavToggle.Provider value={{ toggleNav, setToggleNav }}>
         <LoggedIn.Provider value={{ isLoggedIn, setIsLoggedIn }} >
 

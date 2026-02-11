@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import PageBanners from "../components/PageBanners"
 import LoggedIn from "../Context/LoggedIn"
+import { toast } from "react-toastify"
 
 function ProdunctDetails() {
     const { id } = useParams()
@@ -26,7 +27,7 @@ function ProdunctDetails() {
         let exist = cart.find(e => e.title == product.title)
         exist ? exist.quantity += 1 : cart.push(newItem)
         localStorage.setItem("cartitems", JSON.stringify(cart))
-        alert(`${product.title} has been added to cart successfully`)
+        toast.success(`${product.title} has been added to cart successfully`)
     }
 
     const addToCart = () => {

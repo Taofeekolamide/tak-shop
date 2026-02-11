@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import LoggedIn from "../Context/LoggedIn"
 import { useContext } from "react"
+import { toast } from "react-toastify"
 
 function ProductTwo({ image, name, sale, price, detail }) {
     const { isLoggedIn, setIsLoggedIn } = useContext(LoggedIn)
@@ -10,7 +11,7 @@ function ProductTwo({ image, name, sale, price, detail }) {
         let exist = cart.find(f => f.title === name)
         exist ? exist.quantity += 1 : cart.push(newItem)
         JSON.stringify(localStorage.setItem("cartitems", JSON.stringify(cart)))
-        alert(`${name} has been added to cart successfully`)
+        toast.success(`${name} has been added to cart successfully`)
     }
 
     const addToCart = () => {

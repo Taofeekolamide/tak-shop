@@ -18,11 +18,8 @@
     padding: 25px;
     flex: 1;
     border-radius: var(--radius);
-    background-color: rgb(237, 237, 237);
+    background-color: rgb(244, 244, 244);
     flex-basis: 400px;
-}
-
-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -52,7 +49,7 @@ fieldset {
     padding: 25px;
     flex: 1;
     border-radius: var(--radius);
-    background-color: var(--color);
+    background-color: #f9f3f0;
     flex-basis: 400px;
     height: fit-content;
 }

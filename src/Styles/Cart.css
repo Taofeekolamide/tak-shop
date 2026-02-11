@@ -8,6 +8,7 @@
 
 .cart {
     padding: 50px var(--desxtop-pad);
+    
 }
 
 .cartlist {
@@ -51,6 +52,48 @@
     align-items: var(--align-center);
     gap: 10px;
     flex: 1;
+}
+
+.cartorder {
+    width:500px;
+    padding: 25px;
+    border-radius: var(--radius);
+    background-color: #f9f3f0;
+    height: fit-content;
+    justify-self: end;
+    margin-top: 30px;
+}
+
+.cartorderin {
+    margin-top: 20px;
+    padding: 25px 15px;
+    background-color: white;
+    height: fit-content;
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+.cartorderin div {
+    display: var(--display);
+    justify-content: space-between;
+    padding: var(--mobile-pad) 0px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.proceed {
+    min-width: 100%;
+    margin-top: 15px;
+    font-size: 20px;
+    background-color: var(--color);
+    border-radius: 8px;
+    padding: 8px 0px;
+    border: none;
+    transition: transform 200ms ease-in;
+    color: #fff;
+}
+
+.proceed:hover {
+    transform: scale(1.03)
 }
 
 @media (max-width: 992px) {

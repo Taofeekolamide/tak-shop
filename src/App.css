@@ -280,7 +280,7 @@ main {
 /*page banners*/
 .pagebanners {
     padding: 65px var(--desxtop-pad);
-    background-color: #ddd;
+    background-color: #e9e9e9;
 }
 
 .pagebanners p {
