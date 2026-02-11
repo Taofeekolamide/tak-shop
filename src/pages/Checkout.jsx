@@ -37,37 +37,37 @@ function Checkout() {
                         <div className="namegroup">
                             <fieldset>
                                 <legend>First Name</legend>
-                                <input type="text" />
+                                <input type="text" required/>
                             </fieldset>
                             <fieldset>
                                 <legend>Last Name</legend>
-                                <input type="text" />
+                                <input type="text" required />
                             </fieldset>
                         </div>
 
                         <fieldset>
                             <legend>Country / Region</legend>
-                            <input type="text" />
+                            <input type="text" required />
                         </fieldset>
 
                         <fieldset>
                             <legend>Street Address</legend>
-                            <input type="text" />
+                            <input type="text" required />
                         </fieldset>
 
                         <fieldset>
                             <legend>Town / City</legend>
-                            <input type="text" />
+                            <input type="text" required />
                         </fieldset>
 
                         <fieldset>
                             <legend>Phone</legend>
-                            <input type="tel" />
+                            <input type="tel" required />
                         </fieldset>
 
                         <fieldset>
                             <legend>Email</legend>
-                            <input type="email" />
+                            <input type="email" required />
                         </fieldset>
 
                     </div>

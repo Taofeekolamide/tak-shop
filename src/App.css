@@ -426,6 +426,10 @@ footer h1 {
         flex-basis: 120px;
     }
 
+    .productone h1 {
+        font-size: 14px;
+    }
+
     .productimg,
     .producttwoimg {
         padding: 10px;

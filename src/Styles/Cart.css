@@ -8,7 +8,7 @@
 
 .cart {
     padding: 50px var(--desxtop-pad);
-    
+
 }
 
 .cartlist {
@@ -20,7 +20,8 @@
     border-bottom: 1px solid #dfdfdf;
 }
 
-.cartlist .span, .quantity input {
+.cartlist .span,
+.quantity input {
     text-align: center;
     border: none;
     outline: 0;
@@ -31,7 +32,7 @@
     padding: 5px;
 }
 
-.cartlist img{
+.cartlist img {
     width: 90px;
     height: 90px;
     background-color: rgb(224, 224, 224);
@@ -42,6 +43,7 @@
 .cartlist p {
     flex: 1;
 }
+
 .cartlist h2 {
     flex: 1;
     flex-basis: 300px;
@@ -55,7 +57,7 @@
 }
 
 .cartorder {
-    width:500px;
+    width: 500px;
     padding: 25px;
     border-radius: var(--radius);
     background-color: #f9f3f0;
@@ -100,5 +102,9 @@
     .cart {
         padding: 30px var(--mobile-pad);
 
+    }
+
+    .cartorder {
+        width: 100%;
     }
 }

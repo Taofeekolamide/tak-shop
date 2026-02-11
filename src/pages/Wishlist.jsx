@@ -13,7 +13,7 @@ function Wishlist() {
         let toRemove = wishItems.findIndex(e => e.title == itemTitle)
         wishItems.splice(toRemove, 1)
         localStorage.setItem("wishitems", JSON.stringify(wishItems))
-        toast.error(`${itemTitle} has been removed from wishlist`)
+        toast.info(`${itemTitle} has been removed from wishlist`)
         window.dispatchEvent(new Event("cartUpdated"))
     }
 

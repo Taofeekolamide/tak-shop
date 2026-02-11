@@ -21,7 +21,6 @@ function ProdunctDetails() {
             title: product.title,
             price: product.price,
             quantity: 1
-
         }
         const cart = JSON.parse(localStorage.getItem("cartitems"))
         let exist = cart.find(e => e.title == product.title)
