@@ -51,18 +51,29 @@ fieldset {
     background-color: white;
     height: fit-content;
     width: 100%;
+    
     border-radius: var(--radius);
 }
 
 .yourorderin div {
+    gap: 20px;
     display: var(--display);
     justify-content: space-between;
     padding: var(--mobile-pad) 0px;
     border-bottom: 1px solid #e3e3e3;
+    font-size: 14px;
 }
 
 @media (max-width: 992px) {
     .checkout {
         padding: var(--mobile-pad);
     }
+
+    .yourorder h1 {
+        font-size: 18px;
+    }
+
+        .namegroup {
+           flex-direction: column;
+        }
 }

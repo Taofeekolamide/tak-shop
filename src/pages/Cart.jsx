@@ -61,7 +61,7 @@ function Cart() {
             <div className="cart">
                 {sortedItems.length > 0 ?
                     <>
-                        <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <div className="downhead" >
                             <h1>Your Cart</h1>
                             <button className="clear" onClick={clear}>Clear Cart</button>
                         </div>
@@ -79,7 +79,7 @@ function Cart() {
                                         {/* <input type="text" value={item.quantity} /> */}
                                         <BiPlus className="span" onClick={() => plusQuantity(item.title)} />
                                     </div>
-                                    <p>{Number(item.price * item.quantity).toFixed(2)}</p>
+                                    <p>${Number(item.price * item.quantity).toFixed(2)}</p>
                                 </div>
                             </>
                         ))}

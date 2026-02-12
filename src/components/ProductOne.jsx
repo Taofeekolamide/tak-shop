@@ -66,6 +66,11 @@ function ProductOne({ image, name, sale, price, detail }) {
         }
     }
 
+    const truncate = (text) => {
+        let res = text.split(" ")
+        return res.slice(0, 1).join(" ")+"..."
+    }
+
     return (
         <>
 
@@ -78,7 +83,7 @@ function ProductOne({ image, name, sale, price, detail }) {
                     </div>
                 </div>
                 <Link to={`/product/${detail}`}>
-                    <h1>{name}</h1>
+                    <h1>{truncate( name )}</h1>
                     <div style={{ display: "flex", gap: "10px" }}>
                         <p>${sale}</p>
                         <p style={{ textDecoration: "line-through", color: "#8b8b8b" }}>${price}</p>

@@ -5,7 +5,7 @@ function PageBanners({ title, page }) {
         <>
             <div className="pagebanners">
                 <h1>{title}</h1>
-                <p style={{ fontSize: "20px", color: "black" }}><Link to="/">Home</Link> / {page}</p>
+                <p><Link to="/">Home</Link> / {page}</p>
 
             </div>
         </>

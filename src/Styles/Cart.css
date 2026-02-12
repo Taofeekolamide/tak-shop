@@ -72,6 +72,7 @@
     justify-content: space-between;
     padding: var(--mobile-pad) 0px;
     border-bottom: 1px solid #e3e3e3;
+    gap: 20px;
 }
 
 .proceed {
@@ -93,10 +94,18 @@
 @media (max-width: 992px) {
     .cart {
         padding: 30px var(--mobile-pad);
-
     }
 
     .cartorder {
         width: 100%;
+    }
+
+    .cartlist h2,
+    .cartorder h1 {
+        font-size: 18px;
+    }
+
+    .cartorder h3 {
+        font-size: 15px;
     }
 }

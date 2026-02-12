@@ -70,7 +70,7 @@ function Wishlist() {
             <div className="cart">
                 {sortedItems.length > 0 ?
                     <>
-                        <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <div className="downhead">
                             <h1>Your Wishlist</h1>
                             <button className="clear" onClick={clear}>Clear Wishlist</button>
                         </div>

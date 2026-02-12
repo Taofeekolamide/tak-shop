@@ -93,12 +93,18 @@
     }
 
     .homeimagebox {
-        padding: 60px var(--mobile-pad);
+        padding: 30px var(--mobile-pad);
+
     }
 
     .toprated,
     .viewproducts {
+        gap: 10px;
         padding: 0px var(--mobile-pad) 50px var(--mobile-pad);
+    }
+
+    .brands {
+        gap: 10px;
     }
 
     .heroside {

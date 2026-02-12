@@ -37,6 +37,12 @@ function ProductTwo({ image, name, sale, price, detail }) {
             }
         }
     }
+
+    const truncate = (text) => {
+        let res = text.split(" ")
+        return res.slice(0, 1).join(" ") + "..."
+    }
+
     return (
         <>
             <div className="productone">
@@ -44,7 +50,7 @@ function ProductTwo({ image, name, sale, price, detail }) {
                     <div className="producttwoimg" style={{ backgroundImage: `url(${image})`, backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
 
                     </div>
-                    <h1>{name}</h1>
+                    <h1>{truncate(name)}</h1>
                     <div style={{ display: "flex", gap: "10px" }}>
                         <p>${sale}</p>
                         <p style={{ textDecoration: "line-through", color: "#8b8b8b" }}>${price}</p>
