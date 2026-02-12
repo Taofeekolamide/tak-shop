@@ -99,12 +99,12 @@ function Cart() {
                         </div>
                     </>
                     :
-                    <>
-                        <div style={{ textAlign: "center" }}>
-                            <h1 >No item in Wishlist</h1>
-                            <Link to="/shop"><button className="clear">Go to Shop</button></Link>
-                        </div>
-                    </>
+
+                    <div style={{ textAlign: "center" }}>
+                        <h1 >No item in Wishlist</h1>
+                        <Link to="/shop"><button className="clear">Go to Shop</button></Link>
+                    </div>
+
                 }
 
             </div >

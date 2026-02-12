@@ -1,15 +1,6 @@
 /*hOME PAGE*/
-:root {
-    --display: flex;
-    --color: #3577f0;
-    --align-items: center;
-    --desktop-sec-pad: 250px;
-    --mobile-sec-pad: 20px;
-    --flexwrap: wrap
-}
-
 .homehero {
-    padding: 0px var(--desktop-sec-pad);
+    padding: 0px var(--desktop-pad);
     display: var(--display);
     gap: 30px;
     margin-bottom: 30px;
@@ -22,7 +13,7 @@
 }
 
 .homeimagebox {
-    padding: 60px var(--desktop-sec-pad);
+    padding: 60px var(--desktop-pad);
     display: var(--display);
     flex-wrap: var(--flexwrap);
     gap: 25px;
@@ -40,7 +31,7 @@
 
 .categorylist a {
     color: #000;
-    font-size: 10px;
+    font-size: 10pxy;
 }
 
 /* home view products*/
@@ -49,7 +40,7 @@
     display: var(--display);
     flex-wrap: var(--flexwrap);
     gap: 15px;
-    padding: 0px var(--desktop-sec-pad) 50px var(--desktop-sec-pad);
+    padding: 0px var(--desktop-pad) 50px var(--desktop-pad);
 }
 
 .heroside {
@@ -98,16 +89,16 @@
     }
 
     .homehero {
-        padding: 0px var(--mobile-sec-pad)
+        padding: 0px var(--mobile-pad)
     }
 
     .homeimagebox {
-        padding: 60px var(--mobile-sec-pad);
+        padding: 60px var(--mobile-pad);
     }
 
     .toprated,
     .viewproducts {
-        padding: 0px var(--mobile-sec-pad) 50px var(--mobile-sec-pad);
+        padding: 0px var(--mobile-pad) 50px var(--mobile-pad);
     }
 
     .heroside {

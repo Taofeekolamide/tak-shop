@@ -4,7 +4,6 @@ import { HiHome } from "react-icons/hi";
 import { useContext } from "react";
 import NavToggle from "../Context/NavToggle";
 import { BiCart, BiPhone } from "react-icons/bi";
-import { BsNewspaper } from "react-icons/bs";
 
 function MobileNav() {
     const { toggleNav, setToggleNav } = useContext(NavToggle)
@@ -18,7 +17,6 @@ function MobileNav() {
                     <Link onClick={() => setToggleNav(!toggleNav)} to="/"><HiHome /> Home</Link>
                     <Link onClick={() => setToggleNav(!toggleNav)} to="/shop"><BiCart /> Shop</Link>
                     <Link onClick={() => setToggleNav(!toggleNav)} to="/about"><FaUser /> About</Link>
-                    <Link onClick={() => setToggleNav(!toggleNav)} to="/blog"><BsNewspaper /> Blog</Link>
                     <Link onClick={() => setToggleNav(!toggleNav)} to="/contact"><BiPhone /> Contact</Link>
                 </nav>
 

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { BiBasket, BiCart, BiHeart, BiMenu, BiSearch, BiUser } from "react-icons/bi"
 import { HiX } from "react-icons/hi"
 import { Link, useNavigate } from "react-router-dom"
@@ -56,14 +56,13 @@ function Header() {
                         <Link to="/">Home</Link>
                         <Link to="/shop">Shop</Link>
                         <Link to="/about">About</Link>
-                        <Link to="/blog">Blog</Link>
                         <Link to="/contact">Contact</Link>
                     </nav>
                     <div className="relevantgroup">
                         <Link to="./wishlist"><BiHeart className="relevanticons" /><span className="cart-badge">{wishCount}</span></Link>
                         <Link to="/cart"><BiCart className="relevanticons" /><span className="cart-badge">{cartCount}</span></Link>
                         <Link to="/my-account"><BiUser className="relevanticons" /></Link>
-                        <BiMenu className="relevanticons menu" onClick={showMenu} />
+                        {toggleNav ? <HiX className="relevanticons menu" onClick={showMenu} /> : <BiMenu className="relevanticons menu" onClick={showMenu} />}
                     </div>
                 </div >
             </header>

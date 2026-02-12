@@ -4,12 +4,12 @@ import '../src/Styles/Shop.css'
 import '../src/Styles/Single.css'
 import '../src/Styles/Cart.css'
 import '../src/Styles/Checkout.css'
+import '../src/Styles/Search.css'
 import { Outlet, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from './pages/Shop';
-import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
@@ -49,7 +49,6 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/wishlist" element={<Wishlist />} />
-              <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/search" element={<Search />} />
               <Route path="/my-account" element={<MyAccount />} >

@@ -1,16 +1,7 @@
-:root {
-    --display: flex;
-    --desxtop-pad: 250px;
-    --mobile-pad: 20px;
-    --align-center: center;
-    --color: #3577f0;
-    --radius: 10px
-}
-
 .checkout {
     display: flex;
     gap: 25px;
-    padding: 40px var(--desxtop-pad);
+    padding: 40px var(--desktop-pad);
     flex-wrap: wrap;
 }
 

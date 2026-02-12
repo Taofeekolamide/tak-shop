@@ -1,16 +1,7 @@
-:root {
-    --display: flex;
-    --color: #3577f0;
-    --align-items: center;
-    --desktop-sec-pad: 250px;
-    --mobile-sec-pad: 20px;
-    --flexwrap: wrap
-}
-
 .single {
     display: var(--display);
     gap: 30px;
-    padding: 50px var(--desktop-sec-pad);
+    padding: 50px var(--desktop-pad);
 }
 
 .singleimage {
@@ -27,7 +18,7 @@
 
 .singleinfo {
     flex: 1;
-    display: flex;
+    display: var(--display);
     flex-direction: column;
     gap: 10px;
 }
@@ -35,7 +26,7 @@
 .addtocart {
     padding: 20px;
     border: none;
-    background-color: #3577f0;
+    background-color: var(--color);
     font-size: 20px;
     color: white;
     border-radius: 10px;
@@ -43,7 +34,7 @@
 
 @media (max-width: 992px) {
     .single {
-        padding: 20px var(--mobile-sec-pad);
+        padding: 20px var(--mobile-pad);
         flex-direction: column;
     }
 

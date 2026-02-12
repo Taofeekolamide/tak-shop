@@ -1,0 +1,6 @@
+.search {
+    display: var(--display);
+    flex-wrap: var(--flexwrap);
+    padding: var(--mobile-pad) var(--desktop-pad);
+    gap: 15px;
+}

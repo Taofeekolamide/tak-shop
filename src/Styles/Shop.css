@@ -1,15 +1,6 @@
 /*shop*/
-:root {
-    --display: flex;
-    --color: #3577f0;
-    --align-items: center;
-    --desktop-sec-pad: 250px;
-    --mobile-sec-pad: 20px;
-    --flexwrap: wrap
-}
-
 .shop {
-    padding: 20px var(--desktop-sec-pad);
+    padding: 20px var(--desktop-pad);
 }
 
 .shopprod {
@@ -36,16 +27,16 @@
 }
 
 .error {
-    padding: 40px var(--desktop-sec-pad);
+    padding: 40px var(--desktop-pad);
 }
 
 @media (max-width: 992px) {
     .shop{
-        padding: var(--mobile-sec-pad);
+        padding: var(--mobile-pad);
     }
 
     .error {
-        padding: var(--mobile-sec-pad);
+        padding: var(--mobile-pad);
     }
     
 }
