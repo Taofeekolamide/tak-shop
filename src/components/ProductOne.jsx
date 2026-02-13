@@ -1,74 +1,12 @@
-import { useContext } from "react"
 import { BiHeart } from "react-icons/bi"
 import { Link } from "react-router-dom"
-import LoggedIn from "../Context/LoggedIn"
-import { toast } from "react-toastify"
+import { useCart } from "../Context/CartContext"
 
-
-function ProductOne({ image, name, sale, price, detail }) {
-    const { isLoggedIn, setIsLoggedIn } = useContext(LoggedIn)
-
-    const added = () => {
-        let newItem = {
-            image: image,
-            title: name,
-            price: sale,
-            quantity: 1,
-        }
-        const cartitems = JSON.parse(localStorage.getItem("cartitems")) || []
-        const exist = cartitems.find(e => e.title === name)
-        exist ? exist.quantity += 1 : cartitems.push(newItem)
-        localStorage.setItem("cartitems", JSON.stringify(cartitems))
-        toast.success(`${name} has been added to cart successfully`)
-    }
-
-    const addToCart = () => {
-        if (isLoggedIn) {
-            alert("logged in ")
-        } else {
-            if (localStorage.getItem("cartitems") == null) {
-                localStorage.setItem("cartitems", JSON.stringify([]))
-                added()
-            } else {
-                added()
-            }
-        }
-    }
-
-    const wishAdded = () => {
-        let newItem = {
-            image: image,
-            title: name,
-            price: sale,
-        }
-        const wishitems = JSON.parse(localStorage.getItem("wishitems")) || []
-        const exist = wishitems.find(e => e.title === name)
-        if (exist) {
-            toast.info(`${name} already on the wishlist`)
-        } else {
-            wishitems.push(newItem)
-            localStorage.setItem("wishitems", JSON.stringify(wishitems))
-            toast.success(`${name} has been added to wishlist successfully`)
-        }
-    }
-
-    const addToWishlist = () => {
-        if (isLoggedIn) {
-            alert("logged in user")
-        }
-        else {
-            if (localStorage.getItem("wishitems") === null) {
-                localStorage.setItem("wishitems", JSON.stringify([]))
-                wishAdded()
-            } else {
-                wishAdded()
-            }
-        }
-    }
-
+function ProductOne({ product }) {
+const {addToCart} = useCart()
     const truncate = (text) => {
         let res = text.split(" ")
-        return res.slice(0, 1).join(" ")+"..."
+        return res.slice(0, 1).join(" ") + "..."
     }
 
     return (
@@ -76,17 +14,17 @@ function ProductOne({ image, name, sale, price, detail }) {
 
             <div className="productone">
 
-                <div className="productimg" style={{ backgroundImage: `url(${image})` }} >
+                <div className="productimg" style={{ backgroundImage: `url(${product.images}) ` }} >
                     <div>
-                        <button onClick={addToCart}>Add To Cart</button>
-                        <span onClick={addToWishlist} style={{ borderRadius: "50%", paddingTop: "8px", paddingLeft: "10px", paddingRight: "10px", paddingBottom: "5px", backgroundColor: "#3577f0" }}> <BiHeart color="white" fontSize="16px" /></span>
+                        <button onClick={() => addToCart(product)}>Add To Cart</button>
+                        <span style={{ borderRadius: "50%", paddingTop: "8px", paddingLeft: "10px", paddingRight: "10px", paddingBottom: "5px", backgroundColor: "#3577f0" }}> <BiHeart color="white" fontSize="16px" /></span>
                     </div>
                 </div>
-                <Link to={`/product/${detail}`}>
-                    <h1>{truncate( name )}</h1>
+                <Link to={`/product/${product.id}`}>
+                    <h1>{truncate(product.title)}</h1>
                     <div style={{ display: "flex", gap: "10px" }}>
-                        <p>${sale}</p>
-                        <p style={{ textDecoration: "line-through", color: "#8b8b8b" }}>${price}</p>
+                        <p>${product.discountPercentage}</p>
+                        <p style={{ textDecoration: "line-through", color: "#8b8b8b" }}>${product.price}</p>
                     </div>
 
                 </Link>

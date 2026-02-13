@@ -1,22 +1,15 @@
 import { useEffect, useState } from "react";
 import PageBanners from "../components/PageBanners";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../Context/CartContext";
 
 function Checkout() {
 
-    const [sortedItems, setSortedItems] = useState([])
-    const [total, setTotal] = useState(0)
+    const { cartItems } = useCart()
+    const { total } = useCart()
     const nav = useNavigate()
 
-    useEffect(() => {
-        let cartitems = JSON.parse(localStorage.getItem("cartitems")) || []
-        setSortedItems(cartitems)
-    }, [])
 
-    useEffect(() => {
-        const t = sortedItems.reduce((sum, item) => (sum + item.price * item.quantity), 0)
-        setTotal(Number(t.toFixed(2)))
-    }, [sortedItems])
 
     const payment = (e) => {
         e.preventDefault()
@@ -37,7 +30,7 @@ function Checkout() {
                         <div className="namegroup">
                             <fieldset>
                                 <legend>First Name</legend>
-                                <input type="text" required/>
+                                <input type="text" required />
                             </fieldset>
                             <fieldset>
                                 <legend>Last Name</legend>
@@ -80,7 +73,7 @@ function Checkout() {
                                 <h3>Product</h3>
                                 <h3>Subtotal</h3>
                             </div>
-                            {sortedItems.map((item) => (
+                            {cartItems.map((item) => (
                                 <div>
                                     <h3>{item.title} X {item.quantity}</h3>
                                     <h3>{Number((item.quantity * item.price).toFixed(2))}</h3>

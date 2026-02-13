@@ -45,7 +45,7 @@ function Shop() {
             <div className="shop">
                 <div className="shopprod" >
                     {items.map((item) => (
-                        <ProductTwo image={item.thumbnail} name={item.title} detail={item.id} price={item.price} sale={item.discountPercentage} />
+                        <ProductTwo product={item} image={item.thumbnail} name={item.title}  price={item.price} sale={item.discountPercentage} />
                     ))}
                 </div>
                 <div className="shopnav">

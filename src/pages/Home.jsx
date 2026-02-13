@@ -151,7 +151,7 @@ function Home() {
             <SubHeading icon={<BiBasket />} text="This week" heading="Top Rated" />
             <div className="toprated">
                 {topRated.slice(0, 5).map((item) => (
-                    <ProductOne detail={`/${item.id}`} image={item.thumbnail} price={item.price} name={item.title} sale={item.discountPercentage} />
+                    <ProductOne product={item} />
                 ))}
             </div>
 
@@ -165,14 +165,14 @@ function Home() {
             <SubHeading icon={<BiBasket />} text="Our Products" heading="Explore our Products" />
             <div className="viewproducts">
                 {product.slice(10, 20).map((item) => (
-                    <ProductTwo detail={`/${item.id}`} image={item.thumbnail} price={item.price} name={item.title} sale={item.discountPercentage} />
+                    <ProductTwo product={item} />
                 ))}
             </div>
 
             <SubHeading icon={<BiBasket />} text="This week" heading="New Arrivals" />
             <div className="viewproducts">
                 {product.slice(product.length - 5, product.length).map((item) => (
-                    <ProductOne detail={`/${item.id}`} image={item.thumbnail} price={item.price} name={item.title} sale={item.discountPercentage} />
+                    <ProductOne product={item} />
                 ))}
             </div>
 

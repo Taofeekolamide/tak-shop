@@ -1,13 +1,16 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { BiBasket, BiCart, BiHeart, BiMenu, BiSearch, BiUser } from "react-icons/bi"
 import { HiX } from "react-icons/hi"
 import { Link, useNavigate } from "react-router-dom"
 import NavToggle from "../Context/NavToggle"
+import { useCart } from "../Context/CartContext"
 
 function Header() {
     const [search, setSearch] = useState("")
-    const { toggleNav, setToggleNav } = useContext(NavToggle)
+    const { toggleNav, setToggleNav } = useContext(NavToggle);
     const [cartCount, setCartCount] = useState(0)
+    const { cartItems } = useCart()
+
     const [wishCount, setWishCount] = useState(0)
     const nav = useNavigate()
 
@@ -25,10 +28,10 @@ function Header() {
         setToggleNav(!toggleNav)
     }
 
-    setInterval(() => {
-        let cartcount = JSON.parse(localStorage.getItem("cartitems")) || []
-        setCartCount(cartcount.length)
-    })
+    useEffect(() => {
+        setCartCount(cartItems.length)
+    }, [cartItems])
+
 
     setInterval(() => {
         let wishcount = JSON.parse(localStorage.getItem("wishitems")) || []

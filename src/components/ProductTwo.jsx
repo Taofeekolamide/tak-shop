@@ -1,42 +1,9 @@
 import { Link } from "react-router-dom"
-import LoggedIn from "../Context/LoggedIn"
-import { useContext } from "react"
-import { toast } from "react-toastify"
+import { useCart } from "../Context/CartContext"
 
-function ProductTwo({ image, name, sale, price, detail }) {
-    const { isLoggedIn, setIsLoggedIn } = useContext(LoggedIn)
+function ProductTwo({ product }) {
 
-    const added = (newItem) => {
-        const cart = JSON.parse(localStorage.getItem("cartitems")) || []
-        let exist = cart.find(f => f.title === name)
-        exist ? exist.quantity += 1 : cart.push(newItem)
-        JSON.stringify(localStorage.setItem("cartitems", JSON.stringify(cart)))
-        toast.success(`${name} has been added to cart successfully`)
-    }
-
-    const addToCart = () => {
-
-        let newItem = {
-            image: image,
-            title: name,
-            price: sale,
-            quantity: 1
-        }
-
-        if (isLoggedIn) {
-            alert("logged in")
-        }
-
-        if (!isLoggedIn) {
-            if (localStorage.getItem("cartitems") == null) {
-                localStorage.setItem("cartitems", JSON.stringify([]))
-                added(newItem)
-            }
-            else {
-                added(newItem)
-            }
-        }
-    }
+   const {addToCart} = useCart()
 
     const truncate = (text) => {
         let res = text.split(" ")
@@ -46,17 +13,17 @@ function ProductTwo({ image, name, sale, price, detail }) {
     return (
         <>
             <div className="productone">
-                <Link to={`/product/${detail}`}>
-                    <div className="producttwoimg" style={{ backgroundImage: `url(${image})`, backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+                <Link to={`/product/${product.id}`}>
+                    <div className="producttwoimg" style={{ backgroundImage: `url(${product.images})`, backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
 
                     </div>
-                    <h1>{truncate(name)}</h1>
+                    <h1>{truncate(product.title)}</h1>
                     <div style={{ display: "flex", gap: "10px" }}>
-                        <p>${sale}</p>
-                        <p style={{ textDecoration: "line-through", color: "#8b8b8b" }}>${price}</p>
+                        <p>${product.discountPercentage}</p>
+                        <p style={{ textDecoration: "line-through", color: "#8b8b8b" }}>${product.price}</p>
                     </div>
                 </Link>
-                <button className="producttwocart" onClick={addToCart}>Add To Cart</button>
+                <button className="producttwocart" onClick={() => addToCart(product)}>Add To Cart</button>
             </div>
         </>
     )
