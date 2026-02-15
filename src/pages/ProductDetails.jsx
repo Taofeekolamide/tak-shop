@@ -28,7 +28,6 @@ function ProdunctDetails() {
                     <p>Unit Left {product.stock}</p>
                     <h3><span style={{ fontSize: "25px" }}>${product.price} </span>&nbsp;<span style={{ textDecoration: "line-through", color: "#919191" }}>${product.discountPercentage}</span></h3>
                     <button className="addtocart" onClick={() => addToCart(product)}>Addt to cart</button>
-
                 </div>
             </div>
         </>
