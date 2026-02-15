@@ -5,14 +5,15 @@ import { toast } from "react-toastify";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(() => {
+        const store = localStorage.getItem("cartitems")
+        return store ? JSON.parse(store) : []
+    });
 
     //local storage
     useEffect(() => {
-        if (!LoggedIn) {
-            localStorage.setItem("cartitems", JSON.stringify(cartItems))
-        }
-    }, [LoggedIn, cartItems])
+        localStorage.setItem("cartitems", JSON.stringify(cartItems))
+    }, [cartItems])
 
     //get cart items
     useEffect(() => {
@@ -32,22 +33,22 @@ export const CartProvider = ({ children }) => {
         else {
             setCartItems(prev => {
                 const exist = prev.find(e => e.title === product.title)
-                return exist ?
-                    prev.map((item) => (
-                        { ...item, quantity: item.quantity + 1 }
-                    ))
-                    :
-                    [...prev, { ...product, quantity: 1 }]
+                if (exist) {
+                    return prev.map(item =>
+                        item.title === product.title && item.quantity <= product.stock ? { ...item, quantity: item.quantity + 1 } : item
+                    )
+                } else {
+                    toast.success(`${product.title} has beeen added to cart`)
+                    return [...prev, { ...product, quantity: 1 }]
+                }
             })
-            toast.success(`${product.title} has beeen added to car`)
         }
     }
 
     //total
-    const total =
-        cartItems.reduce((sum, item) => {
-            return sum + item.quantity * item.price
-        }, 0)
+    const total = Number(cartItems.reduce((sum, item) => {
+        return sum + item.quantity * item.price
+    }, 0).toFixed(2))
 
 
     //increase quantity
@@ -66,6 +67,7 @@ export const CartProvider = ({ children }) => {
         }
     }
 
+    //decrease quantity
     const decreaseQuantity = (product) => {
         if (product.quantity > 1) {
             setCartItems(

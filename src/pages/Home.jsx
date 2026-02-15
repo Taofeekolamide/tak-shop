@@ -5,7 +5,7 @@ import service1 from "../images/service1.png"
 import service2 from "../images/service2.png"
 import service3 from "../images/service3.png"
 import service5 from "../images/service5.png"
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaSpa, FaMobileAlt, FaShoppingBag, FaTshirt, FaCouch, FaShoppingCart, FaDumbbell, FaCar } from "react-icons/fa";
 import { BiUser, BiBasket } from "react-icons/bi";
 import ProductOne from "../components/ProductOne";
 import SubHeading from "../components/SubHeading";
@@ -77,60 +77,60 @@ function Home() {
         <>
             <div className="homehero">
                 <div className="categorylist" style={{ display: open.one ? "flex" : "none" }}>
-                    <Link to="/category/beauty"><h1>Beauty |</h1></Link>
-                    <Link to="/category/fragrances"><h1>Fragrances |</h1></Link>
+                    <Link to="/category/beauty"><h1>Beauty &nbsp;&nbsp;&nbsp;|</h1></Link>
+                    <Link to="/category/fragrances"><h1>Fragrances  &nbsp;&nbsp;&nbsp;|</h1></Link>
                     <Link to="/category/skin-care"><h1>Skin Care</h1></Link>
                 </div>
                 <div className="categorylist" style={{ display: open.two ? "flex" : "none" }}>
-                    <Link to="/category/smartphones"><h1>Smart |</h1></Link>
-                    <Link to="/category/laptops"><h1>Laptops |</h1></Link>
-                    <Link to="/category/tablets"><h1>Tablets |</h1></Link>
+                    <Link to="/category/smartphones"><h1>Smart  &nbsp;&nbsp;&nbsp;|</h1></Link>
+                    <Link to="/category/laptops"><h1>Laptops  &nbsp;&nbsp;&nbsp;|</h1></Link>
+                    <Link to="/category/tablets"><h1>Tablets &nbsp;&nbsp;&nbsp; |</h1></Link>
                     <Link to="/category/mobile-accessories"><h1>Mobile Assessories</h1></Link>
                 </div>
                 <div className="categorylist" style={{ display: open.three ? "flex" : "none" }}>
-                    <Link to="/category/womens-dresses"><h1>Women Dresses |</h1></Link>
-                    <Link to="/category/womens-shoes"><h1>Women Shoes |</h1></Link>
+                    <Link to="/category/womens-dresses"><h1>Women Dresses &nbsp;&nbsp;&nbsp; |</h1></Link>
+                    <Link to="/category/womens-shoes"><h1>Women Shoes  &nbsp;&nbsp;&nbsp;|</h1></Link>
                     <Link to="/category/womens-bags"><h1>Women Bags</h1></Link>
                 </div>
                 <div className="categorylist" style={{ display: open.four ? "flex" : "none" }}>
-                    <Link to="/category/mens-shirts"><h1>Mens Shirts |</h1></Link>
-                    <Link to="/category/mens-shoes"><h1>Mens Shoes |</h1></Link>
+                    <Link to="/category/mens-shirts"><h1>Mens Shirts  &nbsp;&nbsp;&nbsp;|</h1></Link>
+                    <Link to="/category/mens-shoes"><h1>Mens Shoes  &nbsp;&nbsp;&nbsp;|</h1></Link>
                     <Link to="/category/mens-watches"><h1>Mens Watches</h1></Link>
                 </div>
                 <div className="categorylist" style={{ display: open.five ? "flex" : "none" }}>
-                    <Link to="/category/furniture"><h1>Furniture |</h1></Link>
-                    <Link to="/category/home-decoration"><h1>Home Decoration |</h1></Link>
+                    <Link to="/category/furniture"><h1>Furniture  &nbsp;&nbsp;&nbsp;|</h1></Link>
+                    <Link to="/category/home-decoration"><h1>Home Decoration  &nbsp;&nbsp;&nbsp;|</h1></Link>
                     <Link to="/category/kitchen-accessories"><h1>Kitchen Accessories</h1></Link>
                 </div>
                 <div className="categorylist" style={{ display: open.six ? "flex" : "none" }}>
                     <Link to="/category/groceries"><h1>Groceries</h1></Link>
                 </div>
                 <div className="categorylist" style={{ display: open.seven ? "flex" : "none" }}>
-                    <Link to="/category/sports-accessories"><h1>Sport Accessories |</h1></Link>
+                    <Link to="/category/sports-accessories"><h1>Sport Accessories  &nbsp;&nbsp;&nbsp;|</h1></Link>
                     <Link to="/category/sunglasses"><h1>Sunglasses</h1></Link>
                 </div>
                 <div className="categorylist" style={{ display: open.eight ? "flex" : "none" }}>
-                    <Link to="/category/motorcycle"><h1>Motorcycle |</h1></Link>
+                    <Link to="/category/motorcycle"><h1>Motorcycle  &nbsp;&nbsp;&nbsp;|</h1></Link>
                     <Link to="/category/vehicle"><h1>Vehicle</h1></Link>
                 </div>
 
 
                 <div className="catlist">
-                    <CategoryNav text="Beauty" icon={<BiUser />} link="beauty" onClick={() => toggle("one")} />
+                    <CategoryNav text="Beauty" icon={<FaSpa />} link="beauty" onClick={() => toggle("one")} />
                     <hr />
-                    <CategoryNav text="Electronics" icon={<BiUser />} link="electronics" onClick={() => toggle("two")} />
+                    <CategoryNav text="Electronics" icon={<FaMobileAlt />} link="electronics" onClick={() => toggle("two")} />
                     <hr />
-                    <CategoryNav text="Fashion (Women)" icon={<BiUser />} link="fashion-women" onClick={() => toggle("three")} />
+                    <CategoryNav text="Fashion (Women)" icon={<FaShoppingBag />} link="fashion-women" onClick={() => toggle("three")} />
                     <hr />
-                    <CategoryNav text="Fashion (Men)" icon={<BiUser />} link="fashion-men" onClick={() => toggle("four")} />
+                    <CategoryNav text="Fashion (Men)" icon={<FaTshirt />} link="fashion-men" onClick={() => toggle("four")} />
                     <hr />
-                    <CategoryNav text="Home & Living" icon={<BiUser />} link="Home-Living" onClick={() => toggle("five")} />
+                    <CategoryNav text="Home & Living" icon={<FaCouch />} link="Home-Living" onClick={() => toggle("five")} />
                     <hr />
-                    <CategoryNav text="Groceries" icon={<BiUser />} link="gorceries" onClick={() => toggle("six")} />
+                    <CategoryNav text="Groceries" icon={<FaShoppingCart />} link="gorceries" onClick={() => toggle("six")} />
                     <hr />
-                    <CategoryNav text="Sport Accessories" icon={<BiUser />} link="sport-ccessories" onClick={() => toggle("seven")} />
+                    <CategoryNav text="Sport Accessories" icon={<FaDumbbell />} link="sport-ccessories" onClick={() => toggle("seven")} />
                     <hr />
-                    <CategoryNav text="Automotive & Vehicles" icon={<BiUser />} link="automotive-vehicles" onClick={() => toggle("eight")} />
+                    <CategoryNav text="Automotive & Vehicles" icon={<FaCar />} link="automotive-vehicles" onClick={() => toggle("eight")} />
                 </div>
                 <div className="heroside">
 

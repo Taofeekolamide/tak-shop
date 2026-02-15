@@ -26,6 +26,7 @@ import ShopCategory from './pages/ShopCategory'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from './Context/CartContext'
+import { WishProvider } from './Context/WishlistContext'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -33,35 +34,37 @@ function App() {
 
   return (
     <>
-      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover />
+      <ToastContainer position="top-right" autoClose={500} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover />
       <NavToggle.Provider value={{ toggleNav, setToggleNav }}>
         <LoggedIn.Provider value={{ isLoggedIn, setIsLoggedIn }} >
           <CartProvider>
+            <WishProvider>
 
-            <main>
-              <Header />
-              <MobileNav />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/product/:id" element={<ProdunctDetails />} />
-                <Route path="/category/:id" element={<ShopCategory />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/wishlist" element={<Wishlist />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/search" element={<Search />} />
-                <Route path="/my-account" element={<MyAccount />} >
-                  <Route path="dashboard" element={<Home />} />
-                  <Route path="orders" element={<Home />} />
-                </Route>
-              </Routes>
-              <Footer />
-            </main>
+              <main>
+                <Header />
+                <MobileNav />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/shop" element={<Shop />} />
+                  <Route path="/product/:id" element={<ProdunctDetails />} />
+                  <Route path="/category/:id" element={<ShopCategory />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/checkout" element={<Checkout />} />
+                  <Route path="/wishlist" element={<Wishlist />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/search" element={<Search />} />
+                  <Route path="/my-account" element={<MyAccount />} >
+                    <Route path="dashboard" element={<Home />} />
+                    <Route path="orders" element={<Home />} />
+                  </Route>
+                </Routes>
+                <Footer />
+              </main>
 
-            <Outlet />
+              <Outlet />
 
+            </WishProvider>
           </CartProvider>
         </LoggedIn.Provider>
       </NavToggle.Provider>

@@ -16,11 +16,11 @@ function Search() {
 
     return (
         <>
-            <PageBanners title="Search" page={result} />
+            <PageBanners title="Search" page={`Search / ${result}`} />
             {searched.length > 0 ?
                 <div className="search">
                     {searched.map((item) => (
-                        <ProductOne image={item.thumbnail} name={item.title} sale={item.discountPercentage} price={item.price} detail={item.id} />
+                        <ProductOne product={item} />
                     ))}
                 </div>
                 :

@@ -5,12 +5,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
 
 function Cart() {
-    const { cartItems } = useCart()
-    const { clearCart } = useCart()
-    const { removeItem } = useCart()
-    const { increaseQuantity } = useCart()
-    const { decreaseQuantity } = useCart()
-    const { total } = useCart()
+    const { cartItems, clearCart, removeItem, increaseQuantity, decreaseQuantity, total } = useCart()
 
     return (
         <>
@@ -30,7 +25,7 @@ function Cart() {
                                 <div className="cartlist">
                                     <HiX className="span" onClick={() => removeItem(item)} />
                                     <img src={item.thumbnail} alt="logo" />
-                                    <h2>{item.title}</h2>
+                                    <h2><Link to={`/product/${item.id}`}>{item.title}</Link></h2>
                                     <p>${item.price}</p>
                                     <div className="quantity">
                                         <BiMinus className="span" onClick={() => decreaseQuantity(item)} />
@@ -47,7 +42,7 @@ function Cart() {
                             <div className="cartorderin">
                                 <div>
                                     <h3>Sub Total</h3>
-                                    {Number(total.toFixed(2))}
+                                    ${total}
                                 </div>
                             </div>
 

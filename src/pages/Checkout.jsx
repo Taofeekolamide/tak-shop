@@ -1,15 +1,11 @@
-import { useEffect, useState } from "react";
 import PageBanners from "../components/PageBanners";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
 
 function Checkout() {
 
-    const { cartItems } = useCart()
-    const { total } = useCart()
+    const { cartItems, total } = useCart()
     const nav = useNavigate()
-
-
 
     const payment = (e) => {
         e.preventDefault()
@@ -64,7 +60,6 @@ function Checkout() {
                         </fieldset>
 
                     </div>
-
 
                     <div className="yourorder">
                         <h1>Your Order</h1>

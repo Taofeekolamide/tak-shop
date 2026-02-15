@@ -4,3 +4,10 @@
     padding: var(--mobile-pad) var(--desktop-pad);
     gap: 15px;
 }
+
+@media (max-width: 992px) {
+    .search {
+        padding: var(--mobile-pad);
+        gap: 10px;
+    }
+}

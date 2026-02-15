@@ -27,6 +27,7 @@ input {
 
 fieldset {
     border-radius: 6px;
+    border-color: var(--color);
     flex: 1;
 }
 

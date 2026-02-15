@@ -8,7 +8,7 @@ function Shop() {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch(`https://dummyjson.com/products?limit=10&skip=${skip}`)
+        fetch(`https://dummyjson.com/products?limit=12&skip=${skip}`)
             .then(res => res.json())
             .then(data => setItems(data.products))
             .catch(error => setError(error.message))

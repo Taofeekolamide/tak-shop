@@ -4,12 +4,14 @@ import { HiX } from "react-icons/hi"
 import { Link, useNavigate } from "react-router-dom"
 import NavToggle from "../Context/NavToggle"
 import { useCart } from "../Context/CartContext"
+import { useWishlist } from "../Context/WishlistContext"
 
 function Header() {
     const [search, setSearch] = useState("")
     const { toggleNav, setToggleNav } = useContext(NavToggle);
     const [cartCount, setCartCount] = useState(0)
     const { cartItems } = useCart()
+    const { wishItems } = useWishlist()
 
     const [wishCount, setWishCount] = useState(0)
     const nav = useNavigate()
@@ -33,10 +35,9 @@ function Header() {
     }, [cartItems])
 
 
-    setInterval(() => {
-        let wishcount = JSON.parse(localStorage.getItem("wishitems")) || []
-        setWishCount(wishcount.length)
-    })
+    useEffect(() => {
+        setWishCount(wishItems.length)
+    }, [wishItems])
 
     return (
         <>
@@ -46,7 +47,7 @@ function Header() {
                     <div className="searchbar">
                         <BiSearch fontSize="20px" color="#00000081" />
                         <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} onKeyDown={keyCheck} />
-                        <HiX fontSize="20px" color="#00000081" onClick={clearSearch} />
+                        {search && <HiX fontSize="20px" color="#00000081" onClick={clearSearch} />}
                     </div>
                 </div>
 
