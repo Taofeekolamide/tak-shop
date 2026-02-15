@@ -18,7 +18,7 @@ function ProductTwo({ product }) {
             <div className="productone">
 
                 <div className="producttwoimg" style={{ backgroundImage: `url(${product.thumbnail})`, backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
-                    <span onClick={() => addToWishlist(product)} style={{ borderRadius: "50%", paddingTop: "8px", paddingLeft: "10px", paddingRight: "10px", paddingBottom: "5px", backgroundColor: "#3577f0" }}> <BiHeart color="white" fontSize="16px" /></span>
+                    <span onClick={() => addToWishlist(product)} className="wish-icon"> <BiHeart color="white" fontSize="16px" /></span>
                 </div>
                 <Link to={`/product/${product.id}`}>
                     <h1>{truncate(product.title)}</h1>

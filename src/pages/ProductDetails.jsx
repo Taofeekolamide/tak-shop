@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import PageBanners from "../components/PageBanners"
 import { useCart } from "../Context/CartContext"

@@ -6,7 +6,7 @@ import service2 from "../images/service2.png"
 import service3 from "../images/service3.png"
 import service5 from "../images/service5.png"
 import { FaArrowRight, FaSpa, FaMobileAlt, FaShoppingBag, FaTshirt, FaCouch, FaShoppingCart, FaDumbbell, FaCar } from "react-icons/fa";
-import { BiUser, BiBasket } from "react-icons/bi";
+import { BiBasket } from "react-icons/bi";
 import ProductOne from "../components/ProductOne";
 import SubHeading from "../components/SubHeading";
 import Brand from "../components/Brands";
@@ -142,10 +142,10 @@ function Home() {
             </div>
 
             <div className="homeimagebox">
+                <ImageBox text="Next Level Pro Quality" image={service5} />
                 <ImageBox text="Fast & Secure Delivery" image={service1} />
                 <ImageBox text="100% Guarantee On Product" image={service2} />
                 <ImageBox text="24 Hour Return Policy" image={service3} />
-                <ImageBox text="Next Level Pro Quality" image={service5} />
             </div>
 
             <SubHeading icon={<BiBasket />} text="This week" heading="Top Rated" />

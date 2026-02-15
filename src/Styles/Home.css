@@ -94,7 +94,7 @@
 
     .homeimagebox {
         padding: 30px var(--mobile-pad);
-
+        gap: 10px;
     }
 
     .toprated,
