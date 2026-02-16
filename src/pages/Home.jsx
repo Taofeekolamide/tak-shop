@@ -148,33 +148,44 @@ function Home() {
                 <ImageBox text="24 Hour Return Policy" image={service3} />
             </div>
 
-            <SubHeading icon={<BiBasket />} text="This week" heading="Top Rated" />
-            <div className="toprated">
-                {topRated.slice(0, 5).map((item) => (
-                    <ProductOne product={item} />
-                ))}
+            <div className="section">
+                <SubHeading icon={<BiBasket />} text="This week" heading="Top Rated" />
+                <div className="toprated">
+                    {topRated.slice(0, 5).map((item) => (
+                        <ProductOne product={item} />
+                    ))}
+                </div>
             </div>
 
-            <SubHeading icon={<BiBasket />} text="Brands" heading="Our Top Brands" />
-            <div className="brands">
-                {brands.slice(0, 14).map((item) => (
-                    <Brand title={item} />
-                ))}
+
+            <div className="section">
+                <SubHeading icon={<BiBasket />} text="Brands" heading="Our Top Brands" />
+                <div className="brands">
+                    {brands.slice(0, 14).map((item) => (
+                        <Brand title={item} />
+                    ))}
+                </div>
             </div>
 
-            <SubHeading icon={<BiBasket />} text="Our Products" heading="Explore our Products" />
-            <div className="viewproducts">
-                {product.slice(10, 20).map((item) => (
-                    <ProductTwo product={item} />
-                ))}
+
+            <div className="section">
+                <SubHeading icon={<BiBasket />} text="Our Products" heading="Explore our Products" />
+                <div className="viewproducts">
+                    {product.slice(10, 20).map((item) => (
+                        <ProductTwo product={item} />
+                    ))}
+                </div>
             </div>
 
-            <SubHeading icon={<BiBasket />} text="This week" heading="New Arrivals" />
-            <div className="viewproducts">
-                {product.slice(product.length - 5, product.length).map((item) => (
-                    <ProductOne product={item} />
-                ))}
+            <div className="section">
+                <SubHeading icon={<BiBasket />} text="This week" heading="New Arrivals" />
+                <div className="viewproducts">
+                    {product.slice(product.length - 5, product.length).map((item) => (
+                        <ProductOne product={item} />
+                    ))}
+                </div>
             </div>
+
 
         </>
     )
