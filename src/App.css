@@ -277,7 +277,7 @@ main {
     margin-bottom: 10px;
     min-width: fit-content;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 4px;
 }
 
 .brand h1 {
@@ -471,7 +471,7 @@ footer h1 {
     }
 
     .brands {
-        margin: 10px var(--mobile-pad) 50px var(--mobile-pad);
+        margin: 10px 0px 50px 0px;
     }
 
     .brand {

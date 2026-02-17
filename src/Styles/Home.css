@@ -107,7 +107,7 @@
     .toprated,
     .viewproducts {
         gap: 10px;
-        padding: 0px var(--mobile-pad) 50px var(--mobile-pad);
+        padding-bottom: 50px;
     }
 
     .brands {
