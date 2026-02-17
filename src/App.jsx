@@ -5,6 +5,7 @@ import '../src/Styles/Single.css'
 import '../src/Styles/Cart.css'
 import '../src/Styles/Checkout.css'
 import '../src/Styles/Search.css'
+import '../src/Styles/About.css'
 import { Outlet, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";

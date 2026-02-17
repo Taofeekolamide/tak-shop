@@ -1,0 +1,11 @@
+.aboutinfo {
+    display: var(--display);
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.teams {
+    display: var(--display);
+    flex-wrap: wrap;
+    gap: 20px;
+}

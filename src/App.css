@@ -260,8 +260,6 @@ main {
 }
 
 /*sub heading*/
-
-
 .subheading .iconbox {
     display: var(--display);
     align-items: var(--align-center);
@@ -347,13 +345,14 @@ footer h1 {
     font-size: 0.875rem;
 }
 
+/*mobile nav*/
 .mobilenav {
     padding: 25px;
     width: 220px;
     background-color: #e7e7e7;
     position: absolute;
     transform: translateX(-100%);
-    transition: transform 1000ms ease;
+    transition: transform 500ms ease;
     z-index: 10000;
     inset: 0;
 }
@@ -380,7 +379,7 @@ footer h1 {
 }
 
 .imgSection {
-    padding: var(--desktop-pad);
+    padding: 50px var(--desktop-pad);
     display: var(--display);
     gap: 50px;
     align-items: var(--align-center)
@@ -390,7 +389,34 @@ footer h1 {
     flex: 2;
 }
 
+.icon {
+    border-radius: 5px;
+    padding: 20px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    box-shadow: 0px 0px 4px 1px #e7e7e7;
+}
+
+.icon h3 {
+    padding: 10px 0px;
+}
+
+.team {
+    flex-basis: 200px;
+    flex: 1;
+}
+
+.team img {
+    width: 100%;
+    border-radius: 5px;
+}
+
 @media (max-width: 992px) {
+    .team {
+        flex-basis: 200px;
+        
+    }
+
     .section {
         padding: 20px var(--mobile-pad);
     }
@@ -520,5 +546,9 @@ footer h1 {
         align-items: flex-start
     }
 
-    
+    .imgSection img {
+        width: 100%;
+    }
+
+
 }
